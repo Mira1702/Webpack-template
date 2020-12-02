@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "debug.javascript.usePreview",
+            "request": "launch",
+            "url": "debug.javascript.usePreview"
+        }
+    ]
+}
