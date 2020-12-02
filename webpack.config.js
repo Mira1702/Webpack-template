@@ -7,7 +7,7 @@ module.exports = {
     entry: { main: './src/index.js' },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "main.js"
+        filename: "[name].[chunkhash].js"
     }, 
     module: {
         rules: [
@@ -17,15 +17,15 @@ module.exports = {
             use: "babel-loader"                          
         },
           {
-        test: /\.scss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
         }
       ]
   },
     plugins: [ 
       /* new ExtractTextPlugin({ filename: 'style.css' }) */
       new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      filename: 'style.[hash].css'
       }),
       new HtmlWebpackPlugin({
       inject: false,
