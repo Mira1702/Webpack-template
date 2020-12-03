@@ -4,10 +4,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: { main: './src/index.js' },
+    entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].[chunkhash].js"
+        filename: "bundle.js"
     }, 
     module: {
         rules: [
@@ -25,7 +25,7 @@ module.exports = {
     plugins: [ 
       /* new ExtractTextPlugin({ filename: 'style.css' }) */
       new MiniCssExtractPlugin({
-      filename: 'style.[hash].css'
+      filename: 'style.css'
       }),
       new HtmlWebpackPlugin({
       inject: false,
